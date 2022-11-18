@@ -17,9 +17,10 @@ to this section's matching END comment to see page-specific styles.
 /* Our default values set as CSS variables */
 :root {
   --color-bg: #69F7BE;
-  --color-bg-alpha: rgba(105, 247, 190, 0);
+  --color-bg-alpha: rgba(225, 147, 224, 0.33);
   --color-text-main: #000000;
-  --color-primary: #FFFF00;
+  --color-white-alpha: rgba(255,255,255,.66);
+  --color-primary: #ffda74;
   --wrapper-height: 87vh;
   --image-max-width: 300px;
   --image-margin: 3rem;
@@ -75,7 +76,7 @@ img {
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
-  background-image: linear-gradient(180deg, #e3d0a6 0%, #e193e0 50%, #53356c 100%);
+  background-image: linear-gradient(180deg, #e3d0a6 0%, rgb(225, 147, 224) 50%, #53356c 100%);
   z-index: 0;
 }
 
@@ -89,20 +90,17 @@ canvas{
   display:block;
   position: absolute;
   background: var(--color-bg-alpha);
-  width: 80%;
-  top:5%;
+  width: 100%;
+  top:0px;
   left:0px;
   right:0px;
   margin-left: auto;
   margin-right: auto;
-  min-height: 80%;
+  padding-top: 5%;
+  padding-left: 3rem;
+  min-height: 100%;
 }
 
 #main h1{
-  text-align: center;
   font-size: 48pt;
-}
-
-#main h2{
-  text-align: center;
 }

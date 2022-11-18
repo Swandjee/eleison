@@ -1,9 +1,6 @@
 import * as THREE from "three";
 
-import Stats from 'three/addons/libs/stats.module.js';
-
-
-let renderer, stats, scene, camera, geometry, clock;
+let renderer, scene, camera, geometry, clock;
 const worldWidth = 512, worldDepth = 512;
 const gemPosition = [0, 220, 100];
 
@@ -20,6 +17,7 @@ function init() {
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 20000);
     camera.position.y = 220;
     camera.position.z = 250;
+   
     const ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
     scene.add(ambientLight);
 
@@ -75,10 +73,6 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
 
-    stats = new Stats();
-    
-    document.body.appendChild(stats.dom);
-
     window.addEventListener('resize', onWindowResize);
 }
 
@@ -96,7 +90,6 @@ function animate() {
     requestAnimationFrame(animate);
 
     render();
-    stats.update();
 
 }
 
@@ -108,6 +101,7 @@ function render() {
     //camera.position.z = Math.sin(timer) * 800;
 
     camera.lookAt(gem.position);
+    camera.position.x = 100;
 
     gem.rotation.x = timer * 5;
     gem.rotation.y = timer * 2.5;
